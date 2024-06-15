@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+  }
+  
+  .resume {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    object-fit: contain;
+  }
+  
+  .sidebar {
+    width: 30%;
+    background-color: #2b3e50;
+    color: white;
+    padding: 20px;
+  }
+  
+  .sidebar .photo {
+    text-align: center;
+  }
+  
+  .sidebar .photo img {
+    width: 150px;
+    border-radius: 50%;
+  }
+  
+  .sidebar h2 {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  .sidebar p,
+  .sidebar ul {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin: 5px 0;
+  }
+  
+  .main-content {
+    width: 70%;
+    padding: 20px;
+  }
+  
+  .main-content h1 {
+    font-size: 36px;
+    margin: 0;
+  }
+  
+  .main-content h2 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #666;
+  }
+  
+  .main-content .summary {
+    font-size: 16px;
+    margin: 20px 0;
+  }
+  
+  .main-content .experience,
+  .main-content .reference {
+    margin-top: 30px;
+  }
+  
+  .main-content .experience .job,
+  .main-content .reference .ref-item {
+    margin-bottom: 20px;
+  }
+  
+  .main-content .job h3,
+  .main-content .ref-item p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .main-content .job h4,
+  .main-content .job h5 {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #333;
+  }
+  
+  .main-content .job p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  

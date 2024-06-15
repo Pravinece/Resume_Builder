@@ -1,0 +1,164 @@
+
+
+
+.b {
+    font-family: Arial, sans-serif;
+    background: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container1 {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 75%;
+box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #6200ea;
+    color: white;
+    padding: 10px 20px;
+    flex: 0 0 auto;
+}
+
+.change-template {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.grid1 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    flex: 1 1 auto;
+}
+
+.grid1 > div {
+    background: white;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.sidebar1 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-right: 1px solid #ccc;
+}
+
+.sidebar1 button {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.sidebar1 button:hover {
+    border-color: #6200ea;
+}
+
+.sidebar1 button.active {
+    background: #e0e0e0;
+    border-left: 4px solid #6200ea;
+}
+
+.content1 form {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.content1 form input {
+    padding: 10px;
+    border: 1px solid #6c63ff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+/* .notes{
+  width: 50%;
+} */
+.long-notes {
+    width: 85%;
+    height: 100px; 
+    padding: 10px;
+    box-sizing: border-box;
+    border-color: #6c63ff;
+  }
+
+.country{
+color: #007bff;
+}
+  form input[type="file"].file {
+    max-width: 300px; /* Reduce the width to prevent horizontal scrolling */
+    padding: 5px;
+  }
+  
+  /* General button styles */
+  form button {
+    padding: 8px 15px; /* Adjust padding to reduce size */
+    margin: 10px 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px; /* Adjust font size to reduce overall button size */
+  }
+  
+  form button.next {
+    background-color: #28a745;
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+  }
+  
+  form button.next:hover {
+    background-color: #218838;
+  }
+button.next {
+    background: #6200ea;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: start;
+}   
+/* Ensure form inputs do not cause overflow */
+form input, form textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  form div {
+    overflow: hidden; /* Ensure container doesn't overflow */
+  }
+  
+  form {
+    max-width: 600px; /* Ensure the form does not exceed a certain width */
+    margin: auto; /* Center the form */
+  }
+  
+  /* Ensure file input fits within the container */
+  form input[type="file"] {
+    width: calc(100% - 10px); /* Adjust width to fit within container */
+    padding: 5px;
+    box-sizing: border-box;
+  }
