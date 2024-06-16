@@ -26,7 +26,10 @@ const SignInComponent = ({ onRegisterClick }) => {
         console.log(prop.data);
         console.log(email);
         // console.log(id);
-        if ((prop.data._id == id)||(prop.data.email==email)){
+        if(prop.data=="not exist"){
+          alert("User Not Exist")
+        }
+        else if ((prop.data._id == id)||(prop.data.email==email)){
           ids=prop.data._id;
           navigate(`/home/${prop.data._id}`);
           localStorage.setItem('userId', prop.data._id);
