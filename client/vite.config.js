@@ -12,7 +12,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'build', // Ensure this matches your expected output directory
-    chunkSizeWarningLimit: 500, // Adjust the warning limit as needed
+    chunkSizeWarningLimit: 500, // You can adjust this limit if needed
     rollupOptions: {
       output: {
         manualChunks(id) {
@@ -24,3 +24,4 @@ export default defineConfig({
     }
   },
 });
+
