@@ -3,7 +3,12 @@ const mongoose = require('mongoose')
 const cors = require("cors")
 const UserModel=require('./models/User')
 const Form1Data=require('./models/Formdata')
+const dotenv= require("dotenv");
+const connectDB =require("./config/db")
+dotenv.config();
+connectDB()
 
+const PORT = 3001;
 
 const app = express()
 app.use (express.json())
@@ -128,7 +133,10 @@ app.get('/form5/:profileid', (req, res) => {
     .then(data => res.json(data))
     .catch(err => res.status(500).json(err));
 });
+app.get("/", (req, res) => {
+  res.send("<h1>Hello world...</h1>");
+});
 
 app.listen(3001, () => {
-    console.log("server is running");
+    console.log(`server is running 3000`);
 })
