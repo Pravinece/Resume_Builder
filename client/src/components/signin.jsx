@@ -21,7 +21,7 @@ const SignInComponent = ({ onRegisterClick }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('http://localhost:3001/signin',{email, password})
+      .post(`${process.env.BACKEND_URI}/signin`,{email, password})
       .then(prop => {
         console.log(prop.data);
         console.log(email);
@@ -39,7 +39,7 @@ const SignInComponent = ({ onRegisterClick }) => {
   };
 
   useEffect(()=>{axios
-    .get('http://localhost:3001')
+    .get(`${process.env.BACKEND_URI}`)
     .then(response => {
       console.log(response.data)
     })

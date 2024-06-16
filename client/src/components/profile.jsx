@@ -17,7 +17,7 @@ export default function ViewProfile(){
  
     
     useEffect(() => {
-      axios.get(`http://localhost:3001/user/${id}`)
+      axios.get(`${process.env.BACKEND_URI}/user/${id}`)
       .then(prop=>{setUser(prop.data)
         console.log(prop.data)
         setPhone(prop.data.phone);
@@ -33,7 +33,7 @@ export default function ViewProfile(){
 
       const update=(e)=>{   
         e.preventDefault();       
-      axios.put(`http://localhost:3001/user/${id}`,{phone})
+      axios.put(`${process.env.BACKEND_URI}/user/${id}`,{phone})
       .then(prop=>{
         console.log(prop.data)
         setUser(prop.data);

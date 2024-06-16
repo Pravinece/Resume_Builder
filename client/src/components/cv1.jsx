@@ -74,7 +74,7 @@ function Cv1() {
     const fetchData = async () => {
       try {
         const p_id=localStorage.getItem('userId');
-        const res = await axios.get(`http://localhost:3001/form/${p_id}`);
+        const res = await axios.get(`${process.env.BACKEND_URI}/form/${p_id}`);
         setData(res.data[0]);
         console.log(res.data);
       } catch (error) {
@@ -98,7 +98,7 @@ function Cv1() {
     const fetchData = async () => {
       try {
         const p_id=localStorage.getItem('userId');
-        const res = await axios.get(`http://localhost:3001/form2/${p_id}`);
+        const res = await axios.get(`${process.env.BACKEND_URI}/form2/${p_id}`);
         setData2(res.data[0]);
         console.log(res.data);
       } catch (error) {
@@ -124,7 +124,7 @@ useEffect(() => {
   const fetchData = async () => {
     try {
       const p_id=localStorage.getItem('userId');
-      const res = await axios.get(`http://localhost:3001/form3/${p_id}`);
+      const res = await axios.get(`${process.env.BACKEND_URI}/form3/${p_id}`);
       setData3(res.data[0]);
       console.log(res.data);
     } catch (error) {
@@ -155,7 +155,7 @@ useEffect(() => {
   const fetchData = async () => {
     try {
       const p_id=localStorage.getItem('userId');
-      const res = await axios.get(`http://localhost:3001/form4/${p_id}`);
+      const res = await axios.get(`${process.env.BACKEND_URI}/form4/${p_id}`);
       setData4(res.data[0]);
       console.log(res.data);
     } catch (error) {
@@ -178,7 +178,7 @@ useEffect(() => {
   const fetchData = async () => {
     try {
       const p_id=localStorage.getItem('userId');
-      const res = await axios.get(`http://localhost:3001/form5/${p_id}`);
+      const res = await axios.get(`${process.env.BACKEND_URI}/form5/${p_id}`);
       setData5(res.data[0]);
       console.log(res.data);
     } catch (error) {
