@@ -30,7 +30,7 @@ function App() {
           {/* <Route path='/cv/:id' element={<Form1/>}/> */}
           <Route path='/cvupdate' element={<CvdataUpdate/>}/>
           <Route path='/cv/:id' element={<Cv1/>}/>
-
+          <Route path="*" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </>
