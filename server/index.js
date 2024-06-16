@@ -54,6 +54,7 @@ app.get('/user/:id', async (req, res) => {
   // })
 
 app.post('/register',(req,res)=>{
+  console.log("im here");
     UserModel.create(req.body)
     .then(users=>{res.json(users)
     })

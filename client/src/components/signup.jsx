@@ -14,7 +14,7 @@ const SignUpComponent = ({ onLoginClick }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`${process.env.BACKEND_URI}/register`, { name, email, password })
+      .post(`${import.meta.env.VITE_BACKEND_URI}/register`, { name, email, password })
       .then(prop => {console.log(prop)
         console.log(prop.data._id);
         // setId=prop.data._id;

@@ -32,7 +32,7 @@ export default function Form1({ handlenext }) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`${process.env.BACKEND_URI}/cvupdate`, formData)
+    axios.post(`${import.meta.env.VITE_BACKEND_URI}/cvupdate`, formData)
       .then(response => {
         console.log(response.data);
         handlenext();
@@ -116,7 +116,7 @@ export function Form2({ handlenext, handleprev }) {
     
       const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(`${process.env.BACKEND_URI}/cvupdate2`, formData)
+        axios.post(`${import.meta.env.VITE_BACKEND_URI}/cvupdate2`, formData)
           .then(response => {
             console.log(response.data);
             handlenext();
@@ -188,7 +188,7 @@ export function Form3({ handlenext, handleprev }) {
     
       const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(`${process.env.BACKEND_URI}/cvupdate3`, formData)
+        axios.post(`${import.meta.env.VITE_BACKEND_URI}/cvupdate3`, formData)
           .then(response => {
             console.log(response.data);
             handlenext();
@@ -261,7 +261,7 @@ export function Form4({ handlenext, handleprev }) {
     
       const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(`${process.env.BACKEND_URI}/cvupdate4`, formData)
+        axios.post(`${import.meta.env.VITE_BACKEND_URI}/cvupdate4`, formData)
           .then(response => {
             console.log(response.data);
             handlenext();
@@ -340,7 +340,7 @@ export function Form5({ handleprev }) {
     const id=1;
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`${process.env.BACKEND_URI}/cvupdate5`, formData)
+    axios.post(`${import.meta.env.VITE_BACKEND_URI}/cvupdate5`, formData)
       .then(response => {
         console.log(response.data);
         navigate('/cv/1');

@@ -21,7 +21,7 @@ const SignInComponent = ({ onRegisterClick }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`${process.env.BACKEND_URI}/signin`,{email, password})
+      .post(`${import.meta.env.VITE_BACKEND_URI}/signin`,{email, password})
       .then(prop => {
         console.log(prop.data);
         console.log(email);
@@ -38,17 +38,14 @@ const SignInComponent = ({ onRegisterClick }) => {
       .catch((error) => console.log(error));
   };
 
-  useEffect(()=>{axios
-    .get(`${process.env.BACKEND_URI}`)
-    .then(response => {
-      console.log(response.data)
-    })
-    .catch((error) => console.log(error));},[])
+  // useEffect(()=>{axios
+  //   .get(`${import.meta.env.VITE_BACKEND_URI}`)
+  //   .then(response => {
+  //     console.log(response.data)
+  //   })
+  //   .catch((error) => console.log(error));},[])
 
 
-  // const handlehome=()=>{
-  //    navigate(`/home/${ids}`)
-  // }
 console.log(ids);
   return (
     <div className='body1'>
@@ -87,7 +84,6 @@ console.log(ids);
               </div>
             </div>
             <div>
-              {/* <button type="submit" onClick={handlehome}> */}
               <button type='submit' className='btn'>
                 Login
               </button>
