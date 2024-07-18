@@ -29,7 +29,7 @@ const SignInComponent = ({ onRegisterClick }) => {
         if(prop.data=="not exist"){
           alert("User Not Exist")
         }
-        else if ((prop.data._id == id)||(prop.data.email==email)){
+        else if ((prop.data._id == id)&&(prop.data.email==email)){
           ids=prop.data._id;
           navigate(`/home/${prop.data._id}`);
           localStorage.setItem('userId', prop.data._id);
