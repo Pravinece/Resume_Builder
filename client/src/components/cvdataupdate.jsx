@@ -6,9 +6,14 @@ import { Form3 } from "./forms";
 import { Form4 } from "./forms";
 import { Form5 } from "./forms";
 import './cvupdate.css';
+import { useParams } from "react-router-dom";
+
 
 
 export default function CvdataUpdate() {
+    const {tno}=useParams();
+    console.log(tno);
+    
     const [formIndex, setFormIndex] = useState(1);
 
     const handleButtonClick = (formName) => {
@@ -22,9 +27,11 @@ export default function CvdataUpdate() {
     if(formIndex>=1)
       setFormIndex((prop)=>prop-1);
   }
+  
 
   return (
     <>
+
     <div className="b">
       <div className="container1">
       <div className="grid1">
@@ -33,7 +40,7 @@ export default function CvdataUpdate() {
                 <button type="button" className={formIndex === 2 ? "active" : ""} onClick={() => handleButtonClick(2)}><Contact /> Education</button>
                 <button type="button" className={formIndex === 3 ? "active" : ""} onClick={() => handleButtonClick(3)}><UserCog /> Experience</button>
                 <button type="button" className={formIndex === 4 ? "active" : ""} onClick={() => handleButtonClick(4)}><GraduationCap /> Contact Information</button>
-                <button type="button" className={formIndex === 5 ? "active" : ""} onClick={() => handleButtonClick(5)}><Award /> Awards/Certification</button>
+                <button type="button" className={formIndex === 5 ? "active" : ""} onClick={() => handleButtonClick(5)}><Award/> Awards/Certification</button>
           </div>
 
 
@@ -42,7 +49,7 @@ export default function CvdataUpdate() {
         {formIndex === 2 && <Form2 handlenext={moveForward} handleprev={movebackward}/>}
         {formIndex === 3 && <Form3 handlenext={moveForward} handleprev={movebackward}/>}
         {formIndex === 4 && <Form4 handlenext={moveForward} handleprev={movebackward}/>}
-        {formIndex === 5 && <Form5  handleprev={movebackward}/>}
+        {formIndex === 5 && <Form5 handleprev={movebackward} tno={tno}/>}
       </div>
       </div>
       </div>

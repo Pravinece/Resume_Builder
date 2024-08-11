@@ -34,6 +34,10 @@ const SignInComponent = ({ onRegisterClick }) => {
           navigate(`/home/${prop.data._id}`);
           localStorage.setItem('userId', prop.data._id);
 
+
+
+
+          
         } else {
           alert("User Not Found "+ids);
         }

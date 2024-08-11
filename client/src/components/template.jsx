@@ -24,12 +24,12 @@ const Template = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
   };
 
-//   const handleupdate = (i) => {
-//     navigate(`/cvupdate/${i}`);
-//   };
-const handleupdate = () => {
-    navigate('/cvupdate');
+  const handleupdate = (i) => {
+    navigate(`/cvupdate/${i+1}`);
   };
+// const handleupdate = () => {
+//     navigate('/cvupdate');
+//   };
 
   return (
     < >

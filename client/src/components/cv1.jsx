@@ -4,11 +4,11 @@ import { useParams } from 'react-router-dom';
 import './cv1.css';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import { format } from 'date-fns';
   // let {id}=useParams();
 
 function Cv1() {
   const pdfRef=useRef();
-
   const downloadPDF = () => {
     const input = pdfRef.current;
   
@@ -35,30 +35,6 @@ function Cv1() {
       pdf.save('Resume.pdf');
     });
   };
-  
-// const downloadPDF = () => {
-//   const input = pdfRef.current;
-
-//   html2canvas(input, { scale: 2 }).then((canvas) => {
-//     const imgData = canvas.toDataURL('image/png'); 
-//     const pdf = new jsPDF('p', 'mm', 'a4', true);
-
-//     const pdfWidth = pdf.internal.pageSize.getWidth();
-//     const pdfHeight = pdf.internal.pageSize.getHeight();
-
-//     const imgWidth = canvas.width;
-//     const imgHeight = canvas.height;
-
-//     const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
-
-//     const imgX = (pdfWidth - imgWidth * ratio) / 2;
-//     const imgY = 0;
-
-//     pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
-
-//     pdf.save('Resume.pdf');
-//   });
-// };
   // ======================form1data=====================
   const [data, setData] = useState({
     firstname: '',
@@ -70,6 +46,7 @@ function Cv1() {
     zipcode: '',
     profile:''
   });
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -81,7 +58,6 @@ function Cv1() {
         console.error('Error fetching data:', error);
       }
     };
-
     fetchData();
   }, []);
 // =================form2data====================================
@@ -105,7 +81,6 @@ function Cv1() {
         console.error('Error fetching data:', error);
       }
     };
-
     fetchData();
   }, []);
 // =======================form3data==============================

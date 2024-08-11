@@ -44,14 +44,6 @@ app.get('/user/:id', async (req, res) => {
     }
   });
 
-  // app.put('/user/:id',(req,res)=>{
-  //   const id=req.params.id;
-  //   UserModel.findByIdAndUpdate(id, { phone: req.body.phone }, { new: true })  
-  //   .then(users=>{
-  //     console.log(res.json(users));
-  //     res.json(users)})
-  //   .catch(err=>res.json(err))
-  // })
 
 app.post('/register',(req,res)=>{
   console.log("im here");

@@ -99,4 +99,13 @@ body {
     font-size: 14px;
     margin: 5px 0;
   }
-  
+  .downloadbutton{
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 2px solid;
+    background-color: #6c63ff;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 50%;
+  }

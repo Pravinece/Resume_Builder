@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Languages } from 'lucide-react';
 import Cv1 from './cv1';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { useRef } from 'react';
 import './cvupdate.css'
-
+import { format } from 'date-fns';
 // const childRef = useRef();
+// const tno=2;
+
 
 export default function Form1({ handlenext }) {
   const [formData, setFormData] = useState({
@@ -108,10 +110,19 @@ export function Form2({ handlenext, handleprev }) {
     
       const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData({
-          ...formData,
-          [name]: value,
-        });
+        if (name === 'institutestart' || name === 'institutefinish') {
+          const formattedDate = format(new Date(value), 'MM-dd-yyyy');
+          setFormData({
+              ...formData,
+              [name]: formattedDate,
+          });
+      } else {
+          setFormData({
+              ...formData,
+              [name]: value,
+          });
+      }
+
       };
     
       const handleSubmit = (e) => {
@@ -180,10 +191,18 @@ export function Form3({ handlenext, handleprev }) {
     
       const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData({
-          ...formData,
-          [name]: value,
-        });
+        if (name === 'experiencestart' || name === 'experiencefinish') {
+          const formattedDate = format(new Date(value), 'MM-dd-yyyy');
+          setFormData({
+              ...formData,
+              [name]: formattedDate,
+          });
+      } else {
+          setFormData({
+              ...formData,
+              [name]: value,
+          });
+      }
       };
     
       const handleSubmit = (e) => {
@@ -320,7 +339,8 @@ export function Form4({ handlenext, handleprev }) {
   );
 }
 
-export function Form5({ handleprev }) {
+export function Form5({ handleprev ,tno}) {
+  // console.log(tno);
   const [formData, setFormData] = useState({
     organization: '',
     awardtitle: '',
@@ -331,35 +351,33 @@ export function Form5({ handleprev }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    if (name === 'awarddate') {
+      const formattedDate = format(new Date(value), 'MM-dd-yyyy');
+      setFormData({
+          ...formData,
+          [name]: formattedDate,
+      });
+  } else {
+      setFormData({
+          ...formData,
+          [name]: value,
+      });
+  }
   };
     const navigate=useNavigate();
-    const id=1;
-  const handleSubmit = (e) => {
+   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post(`${import.meta.env.VITE_BACKEND_URI}/cvupdate5`, formData)
       .then(response => {
         console.log(response.data);
-        navigate('/cv/1');
+        navigate(`/cv/${tno}`);
       })
       .catch(error => {
         console.error('There was an error!', error);
       });
   };
 
-//   const handleDownload = async () => {
-//     const input = childRef.current;
-//     const canvas = await html2canvas(input);
-//     const imgData = canvas.toDataURL('image/png');
-//     const pdf = new jsPDF('p', 'mm', 'a4');
-//     const pdfWidth = pdf.internal.pageSize.getWidth();
-//     const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-//     pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-//     pdf.save('download.pdf');
-//   };
+
 
   return (
     <form onSubmit={handleSubmit}>
@@ -384,9 +402,6 @@ export function Form5({ handleprev }) {
         <button type="button" onClick={handleprev}>❮</button>
         <button type="submit">Finish</button>
 
-        {/* <div ref={childRef}>
-        <Cv1 /> */}
-      {/* </div> */}
       </div>
     </form>
   );
